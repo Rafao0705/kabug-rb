@@ -4,8 +4,8 @@
 
 FROM ruby:2.6.5-stretch
 
-RUN echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90qanija \
-  && echo 'DPkg::Options "--force-confnew";' >> /etc/apt/apt.conf.d/90qanija
+RUN echo 'APT::Get::Assume-Yes "true";' > /etc/apt/apt.conf.d/90qaninja \
+  && echo 'DPkg::Options "--force-confnew";' >> /etc/apt/apt.conf.d/90qaninja
 
 # Make sure PATH includes ~/.local/bin
 # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839155

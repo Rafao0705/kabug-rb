@@ -1,5 +1,5 @@
 pipeline {
-    agent {
+    agent { // utiliza um agente docker que baixa uma imagem do ruby e instala todas dependencias necessarias.
         docker {
             image 'ruby'
         }
@@ -15,6 +15,7 @@ pipeline {
         stage ('Test') {
             steps {
                 echo 'Running regression tests'
+                sh 'cucumber -p ci'
             }
         }
         stage ('UAT') {

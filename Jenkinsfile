@@ -1,7 +1,7 @@
 pipeline {
     agent { // utiliza um agente docker que baixa uma imagem do ruby e instala todas dependencias necessarias.
         docker {
-            image 'ruby'
+            image 'qaninja/rubywd'
         }
     }
     

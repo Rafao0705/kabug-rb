@@ -54,3 +54,20 @@ Então("o valor total da minha compra deve ser de {string}") do |discount|
   total = find("tr", text: "Total:")
   expect(total).to have_text discount
 end
+
+
+
+Dado('que acesso a página Login') do
+  visit "http://kabug.qaninja.io/index.php?route=account/login"
+
+end
+
+Quando('eu submeto as minhas credenciais {string} e {string}') do |email, senha|
+  find('#input-email').set email
+  find('#input-password').set senha
+  click_button "Acessar"
+end
+
+Então('devo ver a seguinte mensagem de alerta:') do |doc_string|
+  expect(find(".alert").text).to eql doc_string
+end
